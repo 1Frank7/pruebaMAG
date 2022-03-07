@@ -38,7 +38,13 @@ class ubicacionController extends Controller
      */
     public function store(Request $request)
     {
-
+        $ubicacion = new ubicacion;
+        $ubicacion->longitud= $request->longitud;
+        $ubicacion->latitud= $request->latitud;
+        $ubicacion->idusuario= $request->idusuario;
+        $ubicacion->descripcion= $request->descripcion;
+        $ubicacion->save();
+        return response()->json($ubicacion, 200);
         
     }
 
