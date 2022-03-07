@@ -56,6 +56,8 @@ class ubicacionController extends Controller
      */
     public function show($id)
     {
+        $ubicaciones = ubicacion::where('idusuario', $id)->get();
+        return response()->json($ubicaciones, 200);
     
     }
 
