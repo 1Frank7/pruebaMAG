@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Rutas para fines de prueba
+Route::get('/usuarios/{id}', 'usuariosController@show');
+Route::get('/usuarios', 'usuariosController@index');
+
+
+/*
+|--------------------------------------------------------------------------
+| Se definen las rutas para realizar
+|--------------------------------------------------------------------------
+|
+| El GET para la ubicacion de un usuario en especifico
+| El post para resgistrar los usuarios
+| El POST para registrar la ubicacion de un usuario
+|
+*/
+
+Route::get('/ubicaciones/{id}', 'ubicacionController@show');
+Route::post('/usuarios', 'usuariosController@store');
+Route::post('/ubicaciones', 'ubicacionController@store');
