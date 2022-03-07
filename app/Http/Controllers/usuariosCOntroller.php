@@ -60,6 +60,9 @@ class usuariosCOntroller extends Controller
     public function show($id)
     {
         //
+        $usuarios = usuarios::where('idusuarios', $id)->get();
+        
+        return response()->json($usuarios, 200);
        
     }
 
