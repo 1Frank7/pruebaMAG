@@ -38,8 +38,16 @@ class usuariosCOntroller extends Controller
      */
     public function store(Request $request)
     {
-        
-        
+        //Instanciamos el modelo, para hacer uso de ORM Eloquent
+        $usuario=new usuarios();
+        //Asignamos los valores que recibimos del cliente
+        $usuario->idusuarios= $request->idusuarios;
+        $usuario->nombre=$request->nombre;
+        $usuario->apellido=$request->apellido;
+        //Almacenamos el nuevo usuario en la BD's
+        $usuario->save();
+        return response()->json($usuario, 200);
+              
 
     }
 
